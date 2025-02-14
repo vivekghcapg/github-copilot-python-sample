@@ -1,0 +1,51 @@
+# byte-compiled / optimized / DLL files
+*/project.zip
+__pycache__/
+*.py[cod]
+.idea/
+apps/static/assets/localFiles/
+erd
+*.pem
+
+# tests and coverage
+*.pytest_cache
+.coverage
+
+# database & logs
+*.db
+*.sqlite3
+*.log
+apps/ssl
+
+#environment
+.env
+
+# venv
+env
+venv
+.venv
+antenv
+
+# sphinx docs
+_build
+_static
+_templates
+
+# vscode
+.vscode/
+
+# vs
+.vs
+
+# other
+.DS_Store
+.vscode/
+package-lock.json
+apps/static/assets/node_modules
+apps/static/assets/yarn.lock
+apps/static/assets/.temp
+migrations
+node_modules
+yarn.lock
+activate_environ.ps1
+instance

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Employee</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar h2 {
+            color: #ecf0f1;
+        }
+        .sidebar a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        .content {
+            margin-left: 240px; /* Increased margin-left for spacing */
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .content h1 {
+            color: #2c3e50;
+        }
+        .employee-details {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .employee-details h3 {
+            margin: 0;
+        }
+        .employee-details p {
+            margin: 10px 0;
+        }
+        .employee-details hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Employee Management</h2>
+        <a href="/">Home</a>
+        <a href="/create">Create Employee</a>
+        <a href="/listemployees">Get All Employees</a>
+    </div>
+    <div class="content">
+        <h1>Employee Data</h1>
+        <div class="employee-details">
+            <h3>Id</h3>
+            <p>{{employee.employee_id}}</p>
+            <hr>
+            <h3>Name</h3>
+            <p>{{employee.name}}</p>
+            <hr>
+            <h3>Age</h3>
+            <p>{{employee.age}}</p>
+            <hr>
+            <h3>Position</h3>
+            <p>{{employee.position}}</p>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>

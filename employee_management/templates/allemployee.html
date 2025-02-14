@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Employees</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar h2 {
+            color: #ecf0f1;
+        }
+        .sidebar a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        .content {
+            margin-left: 240px; /* Increased margin-left for spacing */
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .content h1 {
+            color: #2c3e50;
+        }
+        .employee-card {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .employee-card h3 {
+            margin: 0;
+        }
+        .edit-button {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .edit-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Employee Management</h2>
+        <a href="/">Home</a>
+        <a href="/create">Create Employee</a>
+        <a href="/listemployees">Get All Employees</a>
+    </div>
+    <div class="content">
+        <h1>All Employees</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.employee_id }}</td>
+                <td>{{ employee.position }}</td>
+                <td>
+                <a href="/employee/{{ employee.employee_id }}/update" class="edit-button">Edit</a>
+                <a href="/employee/{{ employee.employee_id }}/delete" class="edit-button" style="background-color: #e74c3c;">Delete</a>
+                <a href="/employee/{{ employee.employee_id }}" class="edit-button" style="background-color: #2ecc71;">View</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
